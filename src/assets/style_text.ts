@@ -98,10 +98,12 @@ export const Text_H2_white = styled.p`
   text-align: center;
   margin-top: -20px;
   padding: 0 20px;
-  line-height: 50px;
+
   @media (max-width: 768px) {
     font-size: 30px;
+    line-height: 50px;
   }
+
 `;
 export const Text_H3_white = styled.p`
   color: white;
