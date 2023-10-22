@@ -12,6 +12,7 @@ export const Wrap_sidebar = styled.div`
   border-radius: 12px;
   position: fixed;
   padding: 24px 12px;
+  z-index: 999;
 
   @media (max-width: 768px) {
     margin-left: -300px;
