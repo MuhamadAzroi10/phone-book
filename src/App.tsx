@@ -1,25 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import HomePage from "./layouts/HomePage";
+import LandingPage from "./layouts/LandingPage";
+import Dashboard from "./layouts/Dashboard";
+import TambahContact from "./layouts/TambahContact";
+import EditContact from "./layouts/EditContact";
+import TambahContact2 from "./layouts/TambahContact2";
+import DetailContact from "./layouts/DetailContact";
+import EditContact2 from "./layouts/EditContact2";
+import DetailContact2 from "./layouts/DetailContact2";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/add_contact/v1" element={<TambahContact />} />
+          <Route path="/add_contact/v2" element={<TambahContact2 />} />
+          <Route path="/edit_contact/:id" element={<EditContact />} />
+          <Route path="/edit_contact/nomor/:id" element={<EditContact2 />} />
+          <Route path="/detail_contact/:id" element={<DetailContact />} />
+          <Route
+            path="/detail_contact/favorit/:id"
+            element={<DetailContact2 />}
+          />
+
+          <Route path="/home" element={<HomePage />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

@@ -1,0 +1,63 @@
+.pageNumbers {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .pageNumbers li {
+    padding: 7px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    color: black;
+  }
+  
+  .pageNumbers li.active {
+    background-color: #5555d7;
+    color: white;
+  }
+  
+  .pageNumbers li button {
+    background-color: transparent;
+    border: none;
+    color: #5555d7;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin: 0 20px;
+  }
+  .pageNumbers li button .panah {
+    width: 25px;
+    height: 25px;
+  }
+  .pageNumbers li button:hover {
+    background-color: white;
+    color: black;
+  }
+  .pageNumbers li button:focus {
+    outline: none;
+  }
+  
+  .loadmore {
+    padding: 1rem;
+    background-color: transparent;
+    color: white;
+    font-size: 1.2rem;
+    border: 1px solid white;
+    cursor: pointer;
+  }
+  
+
+  .wrap_select_filter label {
+    padding-right: 10px;
+    font-size: 14px;
+  }
+  
+  .wrap_pagenation_filter_kelas {
+    display: flex;
+    justify-content: center;
+  }
