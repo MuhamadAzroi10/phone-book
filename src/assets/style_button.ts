@@ -34,6 +34,10 @@ export const Wrap_button_short = styled.button`
   overflow: hidden;
   position: relative;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    padding: 16px 20px;
+  }
 `;
 
 export const Wrap_button_shortgy = styled.button`
@@ -51,6 +55,10 @@ export const Wrap_button_shortgy = styled.button`
   position: relative;
   cursor: pointer;
   border: 1px solid #5555d7;
+
+  @media (max-width: 768px) {
+    padding: 16px 20px;
+  }
 `;
 export const Wrap_button_longgy = styled.button`
   background: #f3f3ff;

@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import HomePage from "./layouts/HomePage";
 import LandingPage from "./layouts/LandingPage";
 import Dashboard from "./layouts/Dashboard";
 import TambahContact from "./layouts/TambahContact";
@@ -27,8 +26,6 @@ function App() {
             path="/detail_contact/favorit/:id"
             element={<DetailContact2 />}
           />
-
-          <Route path="/home" element={<HomePage />} />
         </Routes>
       </BrowserRouter>
     </>

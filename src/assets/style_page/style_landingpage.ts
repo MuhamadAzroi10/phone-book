@@ -67,11 +67,7 @@ export const lp_no4 = css`
   top: 23%;
 `;
 
-export const lp_text2 = css`
-  @media (max-width: 420px) {
-    font-size: 10px;
-  }
-`;
+
 export const lp_bg_bulat = css`
   position: absolute;
   z-index: 1;
