@@ -1,7 +1,6 @@
 import React from "react";
-import { Line, Doughnut } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 import { Ds_wrap_chart } from "../../assets/style_page/style_dashboard";
-import { Contact, DataContact } from "../../services/types/number";
 
 interface DataChartProps {
   DataPerrent: any;

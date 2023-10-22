@@ -50,19 +50,15 @@ import {
 import { useNavigate, useParams } from "react-router-dom";
 Chart.register(...registerables);
 
-type idParams = {
-  id: string;
-};
-
 const EditContact = () => {
+  // -------------- state
   const navigation = useNavigate();
-
   const [contact, setContact] = useState<any>([]);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const { id } = useParams<string>();
 
-  const { id } = useParams<idParams>();
-
+  // -------------- gql
   const {
     loading: queryLoading,
     error: queryError,
@@ -83,6 +79,7 @@ const EditContact = () => {
     },
   });
 
+  // -------------- construct
   useEffect(() => {
     try {
       setFirstName(queryDataById.contact_by_pk.first_name);
@@ -103,6 +100,7 @@ const EditContact = () => {
     queryDataById,
   ]);
 
+  // -------------- func
   const handleAddContactList = async () => {
     if (firstName != "" && lastName != "") {
       try {

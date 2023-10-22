@@ -49,11 +49,14 @@ import { useNavigate } from "react-router-dom";
 Chart.register(...registerables);
 
 const TambahContact = () => {
+  // -------------- state
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
   const navigation = useNavigate();
+  const [contact, setContact] = useState<any>([]);
 
+  // -------------- gql
   const {
     loading: queryLoading,
     error: queryError,
@@ -64,13 +67,15 @@ const TambahContact = () => {
   const [addTodo, { loading: addLoading, error: addError }] =
     useMutation(ADD_CONTACT_LIST);
 
-  const [contact, setContact] = useState<any>([]);
+  // -------------- custruct
 
   useEffect(() => {
     if (!queryLoading && !queryError && data) {
       setContact(data.contact);
     }
   }, [data, addLoading, queryLoading]);
+
+  // -------------- func
 
   const handleAddContactList = async () => {
     if (firstName != "" && lastName != "" && phone != "") {

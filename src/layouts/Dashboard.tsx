@@ -13,7 +13,6 @@ import {
   Ds_wrap,
 } from "../assets/style_page/style_dashboard";
 import {
-  NoTable,
   Table_box,
   Table_flex,
   Table_item,
@@ -53,7 +52,6 @@ import { formatDate } from "../components/elements_child/FormatDate";
 
 // -------------- plugin
 import { useMutation, useQuery } from "@apollo/client";
-import { Line, Doughnut } from "react-chartjs-2";
 import { Chart, registerables } from "chart.js";
 import Chart_Minggu from "../components/elements/Chart";
 import Chart_Bulan from "../components/elements/Chart2";
@@ -64,14 +62,16 @@ import "react-toastify/dist/ReactToastify.css";
 Chart.register(...registerables);
 
 const Dash = () => {
+  // -------------- state
   const { loading, error, data, refetch } = useQuery(GET_CONTACT_LIST);
-  const [contact, setContact] = useState<any>([]);
+  const [contact, setContact] = useState<Contact[]>([]);
   const [pagePagenation, setPagePagenation] = useState<number>();
   const [contactPagenation, setContactPagenation] = useState<any>([]);
   const [contactPagenation2, setContactPagenation2] = useState<any>([]);
   const [search, setSearch] = useState<string>("");
   const navigation = useNavigate();
 
+  // -------------- func
   const DataPagenation = (data: string): void => {
     setContactPagenation(data);
   };
@@ -88,6 +88,7 @@ const Dash = () => {
     setSearch(data);
   };
 
+  // -------------- gql
   const [
     deleteItem,
     { loading: deleteLoading, error: deleteError, data: deleteData },
@@ -114,8 +115,7 @@ const Dash = () => {
     }
   };
 
-  // Pisahkan kontak favorit dan tidak favorit
-
+  // -------------- construct
   useEffect(() => {
     if (!loading && !error && data) {
       setContact(data.contact);

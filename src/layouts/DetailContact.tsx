@@ -31,9 +31,7 @@ import { RightArrowAlt } from "@emotion-icons/boxicons-regular/RightArrowAlt";
 
 import Sidebar from "../components/elements/Sidebar";
 import {
-  ADD_CONTACT_LIST,
   EDIT_CONTACT_LIST,
-  GET_CONTACT_LIST,
   GET_CONTACT_LIST_BYID,
 } from "../services/graphql/queries";
 
@@ -50,24 +48,16 @@ import {
 import { useNavigate, useParams } from "react-router-dom";
 Chart.register(...registerables);
 
-type idParams = {
-  id: string;
-};
-
-interface PhoneInput {
-  value: string;
-}
-
 const DetailContact = () => {
+  // -------------- state
   const navigation = useNavigate();
-
   const [contact, setContact] = useState<any>([]);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [phones, setPhones] = useState<PhoneInput[]>([]);
+  const [phones, setPhones] = useState<string[]>([]);
+  const { id } = useParams<string>();
 
-  const { id } = useParams<idParams>();
-
+  // -------------- gql
   const {
     loading: queryLoadingById,
     error: queryErrorById,
@@ -101,6 +91,8 @@ const DetailContact = () => {
     } else {
     }
   };
+
+  // -------------- custruct
 
   useEffect(() => {
     setFirstName(queryDataById?.contact_by_pk.first_name);

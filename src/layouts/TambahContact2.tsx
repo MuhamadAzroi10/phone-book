@@ -13,7 +13,6 @@ import {
   Ds_wrap,
 } from "../assets/style_page/style_dashboard";
 import {
-  NoTable,
   Table_box,
   Table_flex,
   Table_item,
@@ -21,7 +20,6 @@ import {
   Table_lists,
   Table_md,
   Wrap_table,
-  imgEditHapus,
   imgEditTable,
 } from "../assets/style_table";
 import {
@@ -45,12 +43,11 @@ import { TelephonePlusFill } from "@emotion-icons/bootstrap/TelephonePlusFill";
 import Pagenation from "../components/elements/Pagenation";
 import Sidebar from "../components/elements/Sidebar";
 import { GET_CONTACT_LIST } from "../services/graphql/queries";
-import { Contact, DataContact } from "../services/types/number";
+import { Contact } from "../services/types/number";
 import { formatDate } from "../components/elements_child/FormatDate";
 
 // -------------- plugin
 import { useQuery } from "@apollo/client";
-import { Line, Doughnut } from "react-chartjs-2";
 import { Chart, registerables } from "chart.js";
 import Chart_Minggu from "../components/elements/Chart";
 import Chart_Bulan from "../components/elements/Chart2";
@@ -59,6 +56,7 @@ import Pagenation3 from "../components/elements/Pagenation3";
 Chart.register(...registerables);
 
 const TambahContact2 = () => {
+  // -------------- state
   const { loading, error, data } = useQuery(GET_CONTACT_LIST);
   const [contact, setContact] = useState<any>([]);
   const [pagePagenation, setPagePagenation] = useState<number>();
@@ -66,11 +64,7 @@ const TambahContact2 = () => {
   const [search, setSearch] = useState<string>("");
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!loading && !error && data) {
-      setContact(data.contact);
-    }
-  }, [data, loading, error]);
+  // -------------- func
 
   const DataPagenation = (data: string): void => {
     setContactPagenation(data);
@@ -83,6 +77,13 @@ const TambahContact2 = () => {
     const data = event.target.value;
     setSearch(data);
   };
+
+  // -------------- construct
+  useEffect(() => {
+    if (!loading && !error && data) {
+      setContact(data.contact);
+    }
+  }, [data, loading, error]);
 
   return (
     <>
@@ -98,8 +99,8 @@ const TambahContact2 = () => {
               <Search className={imgIconInput} />
               <input
                 className={elementInput}
-                type="password"
-                placeholder="password"
+                type="text"
+                placeholder="Search"
                 onChange={inputSearch}
               />
             </Wrap_input>

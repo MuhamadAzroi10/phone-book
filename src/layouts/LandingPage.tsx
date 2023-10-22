@@ -1,4 +1,6 @@
 import React from "react";
+
+// -------------- style
 import {
   Element_flex,
   Lp_arrow_bottom,
@@ -7,13 +9,6 @@ import {
   Wrap_landingPage,
   lp_bg_bulat,
 } from "../assets/style_page/style_landingpage";
-
-import { ArrowheadDownOutline } from "@emotion-icons/evaicons-outline/ArrowheadDownOutline";
-
-import { RightArrowAlt } from "@emotion-icons/boxicons-regular/RightArrowAlt";
-
-import bg_bulat from "./../assets/img/bg_circular_lines.svg";
-
 import {
   Text_H1_white,
   Text_H2_white,
@@ -27,7 +22,16 @@ import {
 } from "../assets/style_button";
 import { useNavigate } from "react-router-dom";
 
+// -------------- icons
+import { RightArrowAlt } from "@emotion-icons/boxicons-regular/RightArrowAlt";
+import bg_bulat from "./../assets/img/bg_circular_lines.svg";
+
+// -------------- component, query and type
+
+import { ArrowheadDownOutline } from "@emotion-icons/evaicons-outline/ArrowheadDownOutline";
+
 const LandingPage: React.FunctionComponent = () => {
+  // -------------- state
   const navigate = useNavigate();
 
   return (

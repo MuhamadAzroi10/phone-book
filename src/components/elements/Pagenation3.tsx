@@ -3,7 +3,6 @@ import "./../../assets/../assets/style_css/navigation.css";
 
 import { RightArrowAlt } from "@emotion-icons/boxicons-regular/RightArrowAlt";
 import { LeftArrowAlt } from "@emotion-icons/boxicons-regular/LeftArrowAlt";
-import { Contact } from "../../services/types/number";
 
 interface PagenationProps {
   getDataTable: (arg: any) => void;
