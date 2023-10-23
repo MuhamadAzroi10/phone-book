@@ -45,4 +45,8 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
+
+
+<img src="./public//sc2.png">
+<img src="./public//sc3.png">
 <img src="./public//sc1.png">
