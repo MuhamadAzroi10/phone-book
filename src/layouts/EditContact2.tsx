@@ -195,7 +195,7 @@ const EditContact2 = () => {
               </Wrap_table>
               <br />
               <Wrap_table>
-                <Text_H6_grey> Add Contact</Text_H6_grey>
+                <Text_H6_grey> Add Number</Text_H6_grey>
                 <Wrap_input>
                   <UserPin className={imgIconInput} />
                   <input

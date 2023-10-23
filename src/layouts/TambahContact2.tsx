@@ -159,7 +159,7 @@ const TambahContact2 = () => {
                           <Table_item className="body">
                             <Table_list className="body">
                               <Text_H6_reg>
-                                {response.first_name} {response.last_name}
+                                {response.first_name?.slice(1)} {response.last_name}
                               </Text_H6_reg>
                             </Table_list>
                             <Table_list className="body">
@@ -217,7 +217,7 @@ const TambahContact2 = () => {
                             <Table_item className="body">
                               <Table_list className="body">
                                 <Text_H6_reg>
-                                  {response.first_name} {response.last_name}
+                                  {response.first_name?.slice(1)} {response.last_name}
                                 </Text_H6_reg>
                               </Table_list>
                               <Table_list className="body">
