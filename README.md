@@ -1,6 +1,6 @@
 # Link Vercel
 
-Link : https://phone-book-cvr3zhv8b-muhamadazroi10.vercel.app/
+Link : https://phone-book-alpha.vercel.app/
 
 # Dokumentasi
 
